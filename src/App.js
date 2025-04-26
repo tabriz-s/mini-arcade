@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
 function App() {
+  const games = ['Game 1', 'Game 2', 'Game 3', 'Game 4', 'Game 5'];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app-container">
+      <header className="glitch-title" data-text="Cozy Arcade">
+        Cozy Arcade
       </header>
+
+      <div className="game-icons">
+        {games.map((game, index) => (
+          <div key={index} className="game-icon">
+            <span>{game}</span>
+          </div>
+        ))}
+      </div>
+
+      <footer className="progress-bar-wrapper">
+        <div className="progress-bar">
+          <div className="progress-fill" style={{ width: '40%' }}></div>
+        </div>
+      </footer>
     </div>
   );
 }
